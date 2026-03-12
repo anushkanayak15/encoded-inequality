@@ -1,179 +1,129 @@
-# Encoded Inequality 
+# Encoded Inequality
+### Gender-Coded Language and Bias in Job Postings
 
-Project: Gender-Coded Language and Bias in Job Postings  
-Author: Anushka Nayak and Jennifer Mena  
-Language: Python 3.10  
-Methods: FastText Embeddings, WEAT, Lexicon Analysis  
+**Authors:** Anushka Nayak and Jennifer Mena  
+**Language:** Python 3.10  
+**Methods:** FastText Embeddings · WEAT · Lexicon Analysis
 
+---
 
 ## Overview
 
-This project analyzes gender-coded language in job postings and how it varies by seniority level.  
-The central question is whether leadership roles contain stronger masculine-coded language compared to entry-level roles.
+This project analyzes gender-coded language in job postings and how it varies by seniority level. The central question is whether leadership roles contain stronger masculine-coded language compared to entry-level roles.
 
 Two parallel experiments were conducted:
 
-1. Synthetic Job Postings Dataset (controlled experiment)  
-2. LinkedIn Job Postings Dataset (real-world large-scale data)
+| Experiment | Dataset | Purpose |
+|---|---|---|
+| 1 | Synthetic Job Postings | Validate methodology on controlled data |
+| 2 | LinkedIn Job Postings (2023–2024) | Evaluate generalizability on real-world data |
 
 Both experiments follow the same conceptual pipeline:
 
+```
 Data Cleaning → Seniority Grouping → Embedding Training → Bias Measurement (WEAT + Lexicon)
+```
 
+---
 
 ## Experiment 1 — Synthetic Job Postings
 
-Purpose:  
-To validate the methodology on a controlled dataset where language patterns are intentionally constructed and easier to interpret.
+A controlled dataset with intentionally constructed language patterns, representing four seniority levels: **Entry**, **Mid**, **Senior**, and **Leadership**.
 
-Dataset:  
-Simulated job postings representing four seniority levels:
+### Pipeline — Run Notebooks in Order
 
-- Entry  
-- Mid  
-- Senior  
-- Leadership  
+**1. `data_cleaning.ipynb`**  
+Removes noise, punctuation, and irrelevant tokens. Standardizes formatting and handles missing or malformed entries. Produces a clean corpus.
 
+**2. `preprocessing_and_seniority.ipynb`**  
+Assigns postings to seniority groups and builds separate corpora per group to ensure meaningful comparisons.
 
-### Pipeline Notebooks (Run in Order)
+**3. `train_embeddings_per_seniority_group.ipynb`**  
+Trains FastText embeddings for each seniority group, capturing semantic patterns within levels. Produces one model per group.
 
-1. data_cleaning.ipynb  
-   - Removes noise, punctuation, and irrelevant tokens  
-   - Standardizes formatting  
-   - Handles missing or malformed entries  
-   - Produces a clean corpus  
+**4. `run_weat_per_seniority.ipynb`**  
+Runs the Word Embedding Association Test (WEAT) to measure association between gendered terms and career concepts. Produces effect sizes and significance values.
 
-2. preprocessing_and_seniority.ipynb  
-   - Assigns postings to seniority groups  
-   - Builds separate corpora per group  
-   - Ensures meaningful comparisons  
-
-3. train_embeddings_per_seniority_group.ipynb  
-   - Trains FastText embeddings for each group  
-   - Captures semantic patterns within levels  
-   - Produces one model per group  
-
-4. run_weat_per_seniority.ipynb  
-   - Runs the Word Embedding Association Test  
-   - Measures association between gendered terms and career concepts  
-   - Produces effect sizes and significance values  
-
-5. gender_coded_language_analysis.ipynb  
-   - Lexicon-based analysis using predefined masculine/feminine word lists  
-   - Counts occurrences of gender-coded terms  
-   - Provides interpretable evidence alongside embedding results  
-
+**5. `gender_coded_language_analysis.ipynb`**  
+Lexicon-based analysis using predefined masculine/feminine word lists. Counts occurrences of gender-coded terms to provide interpretable evidence alongside embedding results.
 
 ### Outputs
 
+```
 results/
-  weat/
-  lexicon/
-  plots/
+├── weat/
+├── lexicon/
+└── plots/
+```
 
-These outputs confirm whether the pipeline detects expected bias patterns in controlled data.
+---
 
+## Experiment 2 — LinkedIn Job Postings
 
-## Experiment 2 - LinkedIn Job Postings
-
-Purpose:  
-To apply the same methodology to real-world job postings and evaluate whether the findings generalize beyond synthetic data.
-
-Dataset Source:  
-LinkedIn Job Postings (2023–2024) from Kaggle  
-https://www.kaggle.com/datasets/arshkon/linkedin-job-postings
-
+Applies the same methodology to real-world job postings from the [LinkedIn Job Postings (2023–2024)](https://www.kaggle.com/datasets/arshkon/linkedin-job-postings) dataset on Kaggle.
 
 ### Pipeline Steps
 
-1. Audit  
-   - Evaluates raw data quality  
-   - Identifies missing values and anomalies  
-   - Produces audit summaries  
-
-2. Scope  
-   - Filters to digital/tech occupations  
-   - Removes unrelated job categories  
-   - Produces a focused corpus  
-
-3. Label  
-   - Assigns seniority levels  
-   - Cleans text and removes duplicates  
-   - Produces final modeling corpora  
-
-4. Train  
-   - Trains FastText embeddings per seniority group  
-   - Produces large model files  
-
-5. WEAT  
-   - Computes bias metrics using trained embeddings  
-   - Produces statistical effect sizes  
-
-6. Robustness  
-   - Tests stability under alternative settings  
-   - Produces comparison outputs  
-
+| Step | Description | Output |
+|---|---|---|
+| **1. Audit** | Evaluates raw data quality; identifies missing values and anomalies | Audit summaries |
+| **2. Scope** | Filters to digital/tech occupations; removes unrelated categories | Focused corpus |
+| **3. Label** | Assigns seniority levels; cleans text and removes duplicates | Final modeling corpora |
+| **4. Train** | Trains FastText embeddings per seniority group | Large model files |
+| **5. WEAT** | Computes bias metrics using trained embeddings | Statistical effect sizes |
+| **6. Robustness** | Tests stability under alternative settings | Comparison outputs |
 
 ### Outputs
 
+```
 data/processed/
 models/
-results/audit/
-results/embeddings/
-results/weat/
-results/robustness/
+results/
+├── audit/
+├── embeddings/
+├── weat/
+└── robustness/
+```
 
+### Required Data
 
-## Required Data for LinkedIn Experiment
+All raw files must be placed inside a folder named `linkedin_data/` with the following structure:
 
-All raw files must be placed inside a folder named:
-
+```
 linkedin_data/
+├── postings.csv
+├── jobs/
+│   └── job_industries.csv
+├── mappings/
+│   └── industries.csv
+└── companies/
+    └── companies.csv
+```
 
-Required structure:
+> **Note:** FastText model files are large and are **not** included in the repository. They must be generated by running the training step.
 
-linkedin_data/postings.csv  
-linkedin_data/jobs/job_industries.csv  
-linkedin_data/mappings/industries.csv  
-linkedin_data/companies/companies.csv  
-
+---
 
 ## Environment Setup
 
-Python version: 3.10 recommended
+**Python version:** 3.10 recommended
 
-Required packages:
+**Required packages:** `pandas` · `numpy` · `matplotlib` · `gensim` · `scipy` · `jupyter`
 
-- pandas  
-- numpy  
-- matplotlib  
-- gensim  
-- scipy  
-- jupyter  
+```bash
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install pandas numpy matplotlib gensim scipy jupyter
+```
 
+---
 
-Example setup:
-
-python -m venv .venv  
-.\.venv\Scripts\python.exe -m pip install pandas numpy matplotlib gensim scipy jupyter  
-
-
-
-## Important Note About Models
-
-FastText model files are very large and are NOT included in the repository.
-
-
-
-## Conceptual Research Goal
+## Research Goals
 
 Across both datasets, the project investigates whether:
 
-- Leadership roles use more masculine-coded language  
-- Entry-level roles use more communal or feminine-coded language  
-- Bias strength increases with seniority  
-- Patterns hold in both controlled and real-world data  
+- Leadership roles use more **masculine-coded** language
+- Entry-level roles use more **communal or feminine-coded** language
+- Bias strength **increases with seniority**
+- Patterns hold in both **controlled and real-world** data
 
 Combining embedding-based WEAT with lexicon counts provides both quantitative rigor and interpretability.
-
-
