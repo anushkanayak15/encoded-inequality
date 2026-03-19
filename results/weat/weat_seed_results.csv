@@ -1,0 +1,13 @@
+test_name,coverage_targets_a,coverage_targets_b,coverage_attrs_a,coverage_attrs_b,effect_size,p_value,group,seed,model_path
+gender_career_family,4,5,10,8,0.5676345667409747,0.2125984251968504,entry,7,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/entry/seed_7/fasttext.model
+gender_career_family,4,5,10,8,0.3750108001315317,0.3228346456692913,entry,17,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/entry/seed_17/fasttext.model
+gender_career_family,4,5,10,8,0.6700544005719129,0.18110236220472442,entry,29,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/entry/seed_29/fasttext.model
+gender_career_family,4,4,10,7,1.1033974656278878,0.1267605633802817,mid,7,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/mid/seed_7/fasttext.model
+gender_career_family,4,4,10,7,1.1166921005195096,0.09859154929577464,mid,17,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/mid/seed_17/fasttext.model
+gender_career_family,4,4,10,7,1.05495628706454,0.08450704225352113,mid,29,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/mid/seed_29/fasttext.model
+gender_career_family,4,5,10,10,0.8995075321634456,0.11023622047244094,senior,7,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/senior/seed_7/fasttext.model
+gender_career_family,4,5,10,10,0.7829230353157154,0.11811023622047244,senior,17,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/senior/seed_17/fasttext.model
+gender_career_family,4,5,10,10,0.929922100652787,0.09448818897637795,senior,29,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/senior/seed_29/fasttext.model
+gender_career_family,5,6,10,8,0.1082773217267197,0.4319654427645788,leadership,7,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/leadership/seed_7/fasttext.model
+gender_career_family,5,6,10,8,-0.11022068301688688,0.572354211663067,leadership,17,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/leadership/seed_17/fasttext.model
+gender_career_family,5,6,10,8,0.03778971884411815,0.4773218142548596,leadership,29,D:/Files/UCLA/CLASSES/4th yr/Winter 2026/COMM 129/Project/encoded-inequality/models/linkedin_fasttext/leadership/seed_29/fasttext.model

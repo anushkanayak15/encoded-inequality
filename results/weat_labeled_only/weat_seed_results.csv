@@ -1,0 +1,13 @@
+test_name,coverage_targets_a,coverage_targets_b,coverage_attrs_a,coverage_attrs_b,effect_size,p_value,group,seed,model_path
+gender_career_family,4,5,10,8,0.456469525344029,0.25984251968503935,entry,7,../models/linkedin_fasttext_labeled_only/entry/seed_7/fasttext.model
+gender_career_family,4,5,10,8,0.4392580883265489,0.2755905511811024,entry,17,../models/linkedin_fasttext_labeled_only/entry/seed_17/fasttext.model
+gender_career_family,4,5,10,8,0.6671241819248656,0.1732283464566929,entry,29,../models/linkedin_fasttext_labeled_only/entry/seed_29/fasttext.model
+gender_career_family,3,4,10,7,0.9231346698471475,0.16666666666666666,mid,7,../models/linkedin_fasttext_labeled_only/mid/seed_7/fasttext.model
+gender_career_family,3,4,10,7,0.9623279519577973,0.1388888888888889,mid,17,../models/linkedin_fasttext_labeled_only/mid/seed_17/fasttext.model
+gender_career_family,3,4,10,7,0.8050701786799072,0.19444444444444445,mid,29,../models/linkedin_fasttext_labeled_only/mid/seed_29/fasttext.model
+gender_career_family,4,4,10,8,0.7319188848325837,0.18309859154929578,senior,7,../models/linkedin_fasttext_labeled_only/senior/seed_7/fasttext.model
+gender_career_family,4,4,10,8,0.6485372862090538,0.23943661971830985,senior,17,../models/linkedin_fasttext_labeled_only/senior/seed_17/fasttext.model
+gender_career_family,4,4,10,8,0.8643877689605887,0.15492957746478872,senior,29,../models/linkedin_fasttext_labeled_only/senior/seed_29/fasttext.model
+gender_career_family,4,0,8,4,,,leadership,7,../models/linkedin_fasttext_labeled_only/leadership/seed_7/fasttext.model
+gender_career_family,4,0,8,4,,,leadership,17,../models/linkedin_fasttext_labeled_only/leadership/seed_17/fasttext.model
+gender_career_family,4,0,8,4,,,leadership,29,../models/linkedin_fasttext_labeled_only/leadership/seed_29/fasttext.model

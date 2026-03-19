@@ -1,0 +1,13 @@
+group,seed,documents,sentences,token_count,vocab_size,min_count,model_path,vectors_path
+entry,7,958,958,535964,10124,2,../models/linkedin_fasttext_labeled_only/entry/seed_7/fasttext.model,../models/linkedin_fasttext_labeled_only/entry/seed_7/fasttext.kv
+entry,17,958,958,535964,10124,2,../models/linkedin_fasttext_labeled_only/entry/seed_17/fasttext.model,../models/linkedin_fasttext_labeled_only/entry/seed_17/fasttext.kv
+entry,29,958,958,535964,10124,2,../models/linkedin_fasttext_labeled_only/entry/seed_29/fasttext.model,../models/linkedin_fasttext_labeled_only/entry/seed_29/fasttext.kv
+mid,7,353,353,160833,10892,1,../models/linkedin_fasttext_labeled_only/mid/seed_7/fasttext.model,../models/linkedin_fasttext_labeled_only/mid/seed_7/fasttext.kv
+mid,17,353,353,160833,10892,1,../models/linkedin_fasttext_labeled_only/mid/seed_17/fasttext.model,../models/linkedin_fasttext_labeled_only/mid/seed_17/fasttext.kv
+mid,29,353,353,160833,10892,1,../models/linkedin_fasttext_labeled_only/mid/seed_29/fasttext.model,../models/linkedin_fasttext_labeled_only/mid/seed_29/fasttext.kv
+senior,7,2032,2032,796013,9493,3,../models/linkedin_fasttext_labeled_only/senior/seed_7/fasttext.model,../models/linkedin_fasttext_labeled_only/senior/seed_7/fasttext.kv
+senior,17,2032,2032,796013,9493,3,../models/linkedin_fasttext_labeled_only/senior/seed_17/fasttext.model,../models/linkedin_fasttext_labeled_only/senior/seed_17/fasttext.kv
+senior,29,2032,2032,796013,9493,3,../models/linkedin_fasttext_labeled_only/senior/seed_29/fasttext.model,../models/linkedin_fasttext_labeled_only/senior/seed_29/fasttext.kv
+leadership,7,50,50,16374,2744,1,../models/linkedin_fasttext_labeled_only/leadership/seed_7/fasttext.model,../models/linkedin_fasttext_labeled_only/leadership/seed_7/fasttext.kv
+leadership,17,50,50,16374,2744,1,../models/linkedin_fasttext_labeled_only/leadership/seed_17/fasttext.model,../models/linkedin_fasttext_labeled_only/leadership/seed_17/fasttext.kv
+leadership,29,50,50,16374,2744,1,../models/linkedin_fasttext_labeled_only/leadership/seed_29/fasttext.model,../models/linkedin_fasttext_labeled_only/leadership/seed_29/fasttext.kv

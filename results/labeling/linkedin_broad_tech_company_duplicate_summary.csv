@@ -1,0 +1,5 @@
+metric,value
+rows_total,20411
+rows_kept_for_model,17793
+exact_duplicates,2002
+template_duplicates,2618

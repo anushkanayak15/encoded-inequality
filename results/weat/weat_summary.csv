@@ -1,0 +1,5 @@
+test_name,group,effect_size_mean,effect_size_std,p_value_mean,coverage_targets_a,coverage_targets_b,coverage_attrs_a,coverage_attrs_b
+gender_career_family,entry,0.5375665891481397,0.14980234977328707,0.2388451443569554,4.0,5.0,10.0,8.0
+gender_career_family,leadership,0.011948785851316987,0.11151753172792209,0.49388048956083513,5.0,6.0,10.0,8.0
+gender_career_family,mid,1.0916819510706457,0.03249257802548781,0.10328638497652581,4.0,4.0,10.0,7.0
+gender_career_family,senior,0.8707842227106494,0.07759479803397895,0.10761154855643044,4.0,5.0,10.0,10.0
